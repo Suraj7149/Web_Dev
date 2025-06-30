@@ -1,5 +1,5 @@
 import React from 'react'
-import todo_icon from 'C:/Users/Suraj-Home/Documents/Work/React and Node.js/To-Do-App/To-Do-App/src/assets/todo_icon.png'
+import todo_icon from 'C:/Users/Suraj/Documents/Work/React and Node.js/todo-app/src/assets/todo_icon.png'
 const Todo = () => {
   return (
     <div className='bg-white place-self-center w-11/12 max-w-md flex flex-col p-7 min-h-[550px] rounded-xl'>
