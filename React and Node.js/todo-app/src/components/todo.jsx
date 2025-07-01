@@ -1,11 +1,11 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import todo_icon from 'C:/Users/Suraj/Documents/Work/React and Node.js/todo-app/src/assets/todo_icon.png'
 import TodoItems from './TodoItems'
 
 
 const Todo = () => {
 
-const [todolist, setTodoList] = useState([]);
+const [todolist, setTodoList] = useState(localStorage.getItem("todos")?JSON.parse(localStorage.getItem("todos")):[]);
 
 const inputRef = useRef();
 
@@ -26,6 +26,28 @@ const add = () => {
     setTodoList((prev)=> [...prev, newTodo]);
     inputRef.current.value= "";
   } 
+
+  const deleteTodo = (id) => {
+    setTodoList((prevTodos)=>{
+      return prevTodos.filter((todo)=> todo.id !== id)
+    })
+  }
+
+  const toggle = (id)=> {
+    setTodoList((prevTodos)=>{
+      return prevTodos.map((todo)=>{
+        if (todo.id === id) {
+          return {...todo, isComplete: !todo.isComplete}
+        }
+        return todo;
+      })
+    })
+  }
+
+  // Functionality to toggle the completion status of a todo item
+  useEffect(()=>{
+    localStorage.setItem("todos", JSON.stringify(todolist))
+  },[todolist])
 
   return (
     <div className='bg-white place-self-center w-11/12 max-w-md flex flex-col p-7 min-h-[550px] rounded-xl'>
@@ -48,7 +70,7 @@ const add = () => {
 
     <div>
       {todolist.map((item, index)=> {
-        return <TodoItems key={index} text={item.text} id={item.id} isComplete={item.isComplete}/>
+        return <TodoItems key={index} text={item.text} id={item.id} isComplete={item.isComplete} deleteTodo={deleteTodo} toggle={toggle}/>
       })}
 
       {/* <TodoItems text="Learn React"/>
