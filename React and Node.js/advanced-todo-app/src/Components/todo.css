@@ -1,0 +1,23 @@
+.todo-app-container{
+    display: flex;
+    
+    justify-content: space-between;
+    height: 500px;
+    background-color: grey;
+    width: 500px;
+    margin: 14px 0 14px 14px;
+    border-radius: 21px;
+}
+
+.new-task-input{
+    width: 70%;
+    height: 21px;
+    border-radius: 21px;
+    margin: 7px;
+}
+.add-new-task-button{
+    width: 30%;
+    height: 28px;
+    border-radius: 21px;
+    margin: 7px;
+}
