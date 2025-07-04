@@ -1,6 +1,6 @@
-.todo-app-container{
+.task-container{
     display: flex;
-    
+    flex-direction: column;
     justify-content: space-between;
     height: 500px;
     background-color: grey;
@@ -9,15 +9,45 @@
     border-radius: 21px;
 }
 
+.add-new-task{
+    display: flex;
+    justify-content: space-around;
+}
+
 .new-task-input{
     width: 70%;
-    height: 21px;
-    border-radius: 21px;
-    margin: 7px;
+    height: 28px;
+    border: none;
+    border-radius: 21px 0 0 21px;
+    margin-left: 7px;
+    margin-top: 7px;
 }
 .add-new-task-button{
+    border: none;
     width: 30%;
-    height: 28px;
-    border-radius: 21px;
-    margin: 7px;
+    height: 30px;
+    border-radius: 0 21px 21px 0;
+    margin-right: 7px;
+    margin-top: 7px;
+    
 }
+
+.task-info{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    
+}
+.count{
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.Tsk-chn-btn{
+    height: 21px;
+}
+
+.task-display{
+    margin-bottom: 7px;
+}
+
