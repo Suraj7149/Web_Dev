@@ -2,12 +2,13 @@ Number_list = [2,7,11,15]
 target = 9
 
 def twoSum(nums, target):
-        target_elements = []
+        elements = {}
 
-        if (target-nums[0]) in nums:
-                print(nums.index(target-nums[0]))
+        for i, num in enumerate(nums):
+            if target - num in elements:
+                   return [elements[target - num], i]
         else:
-                print("false")
+                return []
            
 
 twoSum(nums=Number_list, target=target)
