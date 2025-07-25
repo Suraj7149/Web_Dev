@@ -1,0 +1,194 @@
+Employee Code
+ST66593,
+‘ST66605,
+‘ST66590
+‘ST66597,
+‘ST66564
+‘ST66598
+‘ST66562,
+‘ST66604
+‘ST66577
+‘ST66576
+‘ST66599,
+‘ST66572,
+‘ST66596,
+‘ST66567
+‘ST66573
+‘ST66585
+‘ST66582
+‘ST66579
+‘ST66588
+‘ST66594
+‘ST66566
+‘ST66570
+‘ST66583,
+‘ST66592,
+‘ST66595,
+‘ST66602,
+‘ST66575,
+Employee Name
+Isha Malla
+Karishma
+Parvesh
+Vaishali walia
+Mehul Sehrawat
+Harshit Singh
+Akash
+Mohit
+Abhishek Verma
+Abhishek Tamang
+Anup kumar
+Baljinder singh
+Aditi Sharma
+Himanshu Vishwakarma
+Kundan Kumar Kahar
+Imanshu
+Arman Ali
+Dhan Singh
+Rohit Kumar
+Anurag Bamola
+Md Saeem
+Manpreet Kaur
+Vikrant Kunwar
+Yashwant Solanki
+Manasi Gupta
+Yuvraj Rawat
+Sachin kumar
+g
+zg
+a
+pibbieereere
+Not Available
+Not Available
+Not Available
+Not Available
+Not Available
+Not Available
+Not Available
+Not Available
+Not Available
+Not Available
+Not Available
+Not Available
+Available
+TAT (hh:mm:ss)
+00:05:37
+00:03:54
+00:02:55
+00:05:03
+00:03:49
+00:04:34
+00:04:54
+00:11:35
+00:06:14
+00:13:49
+00:07:49
+00:05:00
+00:04:07,
+00:03:41
+00:45:31
+00:51:56
+00:56:18
+01:17:25
+32:35:44
+00:15:04
+07:07:50
+00:19:43
+00:00:21
+00:05:49
+00:03:55
+00:03:26
+00:01:26
+TLName
+Md Saeem
+Md Saeem
+Md Saeem
+Md Saeem
+Md Saeem
+Md Saeem
+Md Saeem
+Md Saeem
+Md Saeem
+Md Saeem
+Md Saeem
+Md Saeem
+Md Saeem
+Md Saeem
+Md Saeem
+Md Saeem
+Md Saeem
+Deepak Adhikari
+Dhan Singh
+Md Saeem
+Rohit Kumar
+Md Saeem
+Md Saeem
+Md Saeem
+Md Saeem
+Md Saeem
+Md Saeem
+Designation Name
+Customer support executive
+‘Customer support executive
+‘Customer support executive
+‘Customer support executive
+Agent
+‘Customer support executive
+Agent
+‘Customer support executive
+Agent
+Agent
+‘Customer support executive
+Agent
+‘Customer support executive
+Agent
+Agent
+Agent
+Agent
+‘Team Leader
+‘Team Leader
+Customer support executive
+QA
+Agent
+Agent
+‘Customer support executive
+Customer support executive
+‘Customer support executive
+Agent
+Break Reason
+- Meeting
+LogIn
+Log In
+- Bio break
+- Meeting
+-Tea Break
+~Tea Break
+- Meeting
+- Meeting
+Assigned Tickets
+1
+1
+Car en
+Employee Queues
+Chat Queue BB Sell Phone
+Chat Queue BB Sell Phone
+‘Chat Queue BB Sell Phone
+Support
+Support
+Chat Queue BB Sell Phone
+Support
+Support
+Support
+Chat Queue BB Sell Phone
+Chat Queue BB Sell Phone
+Whatsapp Queue (Buyback)
+Whatsapp Queue (Buyback)
+Chat Queue BB Sell Phone
+Chat Queue BB Sell Phone
+Chat Queue BB Sell Phone
+Chat Queue BB Sell Phone
+Support
+Support
+Chat Queue BB Sell Phone
+Support
+comet P con
