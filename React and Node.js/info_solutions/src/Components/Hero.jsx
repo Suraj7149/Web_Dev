@@ -1,27 +1,30 @@
 import React from 'react';
 import gsap from 'gsap';
 import { useState, useEffect } from 'react';
-// import idea from "../src/assets/idea.png";
-// import globe from "../src/assets/globe.png";
-// import nodes from "../src/assets/nodes.png";
-// import sSymbol from "../src/assets/s_symbol.png";
-// import service from "../src/assets/service.png";
-// import sharing from "../src/assets/sharing.png";
-// import user from "../src/assets/user.png";
 
 import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
 
 const Hero = () => {
-  const [activeIndex, setActiveIndex] = useState(3); // default active is s_symbol
+  const [activeIndex, setActiveIndex] = useState(3);
 
-//   gsap.to(".arc-item", {
-//   scale: 1,
-//   opacity: 1,
-//   stagger: 0.2,
-//   duration: 0.8,
-//   ease: "back.out(1.7)"
-// });
+  // const positions = [
+  //   { top: 1020, left: 490 },
+  //   { top: 890, left: 555 },
+  //   { top: 790, left: 680 },
+  //   { top: 743, left: 860 },
+  //   { top: 790, right: 680 },
+  //   { top: 890, right: 555 },
+  //   { top: 1020, right: 490 }
+  // ];
 
+  function givepos(clickIndex) {
+    console.log("Clicked index:", clickIndex);
+    if (activeIndex === clickIndex) {
+    console.log('This element is active!');
+    } else {
+    console.log('This element is not active.');
+    }
+  }
 
   
   return (
@@ -37,13 +40,61 @@ const Hero = () => {
 
         <div className='circular-menu'>
           <div className='circular-menu-line'>
-            <img className='icon' onClick={() => setActiveIndex(index)}  src="../src/assets/idea.png" alt="" />
-            <img className='icon' onClick={() => setActiveIndex(index)}  src="../src/assets/globe.png" alt="" />
-            <img className='icon' onClick={() => setActiveIndex(index)}  src="../src/assets/nodes.png" alt="" />
-            <img className='icon active' onClick={() => setActiveIndex(index)}  src="../src/assets/s_symbol.png" alt="" />
-            <img className='icon' onClick={() => setActiveIndex(index)}  src="../src/assets/service.png" alt="" />
-            <img className='icon' onClick={() => setActiveIndex(index)}  src="../src/assets/sharing.png" alt="" />
-            <img className='icon' onClick={() => setActiveIndex(index)}  src="../src/assets/user.png" alt="" />
+            <div className='icon'>
+            <img 
+              className={` ${activeIndex === 1 ? "active" : ""}`} 
+              onClick={() => {setActiveIndex(1); givepos(1);}}  
+              src="../src/assets/idea.png" 
+              alt="" />
+            </div>
+
+            <div>
+              <img 
+              className={`icon ${activeIndex === 2 ? "active" : ""}`} 
+              onClick={() => {setActiveIndex(2); givepos(2);}}  
+              src="../src/assets/globe.png" 
+              alt="" />
+            </div>
+            
+            <div>
+            <img 
+              className={`icon ${activeIndex === 3 ? "active" : ""}`} 
+              onClick={() => {setActiveIndex(3); givepos(3);}}  
+              src="../src/assets/nodes.png" 
+              alt="" />
+            </div>
+
+            <div>
+            <img 
+              className={`icon ${activeIndex === 4 ? "active" : ""}`} 
+              onClick={() => {setActiveIndex(4); givepos(4);}}  
+              src="../src/assets/s_symbol.png" 
+              alt="" />
+            </div>
+
+            <div>
+            <img 
+              className={`icon ${activeIndex === 5 ? "active" : ""}`} 
+              onClick={() => {setActiveIndex(5); givepos(5);}}  
+              src="../src/assets/service.png" 
+              alt="" />
+            </div>
+
+            <div>
+            <img 
+              className={`icon ${activeIndex === 6 ? "active" : ""}`} 
+              onClick={() => {setActiveIndex(6); givepos(6);}} 
+              src="../src/assets/sharing.png" 
+              alt="" />
+            </div>
+
+            <div>
+            <img 
+              className={`icon ${activeIndex === 7 ? "active" : ""}`} 
+              onClick={() => {setActiveIndex(7); givepos(7);}}  
+              src="../src/assets/user.png" 
+              alt="" />
+            </div>
 
           </div>
 
