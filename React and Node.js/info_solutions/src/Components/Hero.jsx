@@ -40,15 +40,15 @@ const Hero = () => {
 
         <div className='circular-menu'>
           <div className='circular-menu-line'>
-            <div className='icon'>
+            <div className='icon-holder'>
             <img 
-              className={` ${activeIndex === 1 ? "active" : ""}`} 
+              className={`icon ${activeIndex === 1 ? "active" : ""}`} 
               onClick={() => {setActiveIndex(1); givepos(1);}}  
               src="../src/assets/idea.png" 
               alt="" />
             </div>
 
-            <div>
+            <div className='icon-holder'>
               <img 
               className={`icon ${activeIndex === 2 ? "active" : ""}`} 
               onClick={() => {setActiveIndex(2); givepos(2);}}  
@@ -56,7 +56,7 @@ const Hero = () => {
               alt="" />
             </div>
             
-            <div>
+            <div className='icon-holder'>
             <img 
               className={`icon ${activeIndex === 3 ? "active" : ""}`} 
               onClick={() => {setActiveIndex(3); givepos(3);}}  
@@ -64,7 +64,7 @@ const Hero = () => {
               alt="" />
             </div>
 
-            <div>
+            <div className='icon-holder'>
             <img 
               className={`icon ${activeIndex === 4 ? "active" : ""}`} 
               onClick={() => {setActiveIndex(4); givepos(4);}}  
@@ -72,7 +72,7 @@ const Hero = () => {
               alt="" />
             </div>
 
-            <div>
+            <div className='icon-holder'>
             <img 
               className={`icon ${activeIndex === 5 ? "active" : ""}`} 
               onClick={() => {setActiveIndex(5); givepos(5);}}  
@@ -80,7 +80,7 @@ const Hero = () => {
               alt="" />
             </div>
 
-            <div>
+            <div className='icon-holder'>
             <img 
               className={`icon ${activeIndex === 6 ? "active" : ""}`} 
               onClick={() => {setActiveIndex(6); givepos(6);}} 
@@ -88,7 +88,7 @@ const Hero = () => {
               alt="" />
             </div>
 
-            <div>
+            <div className='icon-holder'>
             <img 
               className={`icon ${activeIndex === 7 ? "active" : ""}`} 
               onClick={() => {setActiveIndex(7); givepos(7);}}  
