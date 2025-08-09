@@ -198,12 +198,10 @@ body::-webkit-scrollbar {
   background: transparent;
 }
 
-
-
 .icon-holder {
   position: absolute;
-  /* width: 75px;
-  height: 75px; */
+  width: 75px;
+  height: 75px;
   background: white;
   border-radius: 20px;
   display: flex;
@@ -218,20 +216,19 @@ body::-webkit-scrollbar {
  
 }
 
-/* Positioning items along an arc manually */
-.icon-holder:nth-child(1) { top: 150px;  left: -15px; height: 70px;  width: 70px; }
-.icon-holder:nth-child(2) { top: 58px;   left: 45px; height: 70px;  width: 70px; }
-.icon-holder:nth-child(3) { top: -13px;  left: 135px; height: 75px;  width: 75px; }
-.icon-holder:nth-child(4) { top: -40px;  left: 250px; height: 90px;  width: 90px; }
-.icon-holder:nth-child(5) { top: -13px;  right: 135px; height: 75px;  width: 75px; }
-.icon-holder:nth-child(6) { top: 58px;   right: 45px; height: 70px;  width: 70px; }
-.icon-holder:nth-child(7) { top: 150px;  right: -15px; height: 70px;  width: 70px; }
+.icon-holder:nth-child(1) { top: 150px;  left: -15px; }
+.icon-holder:nth-child(2) { top: 58px;   left: 45px; }
+.icon-holder:nth-child(3) { top: -13px;  left: 135px; }
+.icon-holder:nth-child(4) { top: -40px;  left: 250px; }
+.icon-holder:nth-child(5) { top: -13px;  right: 135px; }
+.icon-holder:nth-child(6) { top: 58px;   right: 45px; }
+.icon-holder:nth-child(7) { top: 150px;  right: -15px; }
 
 
-.icon-holder:nth-child(1) img { height: 50px;  width: 50px; }
+/* .icon-holder:nth-child(1) img { height: 50px;  width: 50px; }
 .icon-holder:nth-child(2) img { height: 50px;  width: 50px; }
 .icon-holder:nth-child(3) img { height: 55px;  width: 55px; }
 .icon-holder:nth-child(4) img { height: 70px;  width: 70px; }
 .icon-holder:nth-child(5) img { height: 55px;  width: 55px; }
 .icon-holder:nth-child(6) img { height: 50px;  width: 50px; }
-.icon-holder:nth-child(7) img { height: 50px;  width: 50px; }
+.icon-holder:nth-child(7) img { height: 50px;  width: 50px; } */
