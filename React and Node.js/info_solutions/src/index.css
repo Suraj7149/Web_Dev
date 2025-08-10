@@ -131,7 +131,7 @@ body::-webkit-scrollbar {
   flex-direction: column;
   align-items: center;
   /* justify-content: space-evenly; */
-  height: 150vh;
+  height: 180vh;
   padding-top: 60px;
   /* background-color: #f0f0f0; */
   text-align: center; 
@@ -208,6 +208,14 @@ body::-webkit-scrollbar {
   justify-content: center;
   align-items: center;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: width 1.4s ease, height 1.4s ease;
+}
+
+.icon-holder.active {
+  height: 90px;
+  width: 90px;
+  transform: translateY(-10px);
+ 
 }
 
 .icon{
@@ -215,6 +223,8 @@ body::-webkit-scrollbar {
   width: 55px;
  
 }
+
+
 
 .icon-holder:nth-child(1) { top: 150px;  left: -15px; }
 .icon-holder:nth-child(2) { top: 58px;   left: 45px; }
