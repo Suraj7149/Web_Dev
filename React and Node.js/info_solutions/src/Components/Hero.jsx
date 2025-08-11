@@ -8,10 +8,10 @@ const Hero = () => {
   gsap.registerPlugin(MotionPathPlugin);
 
   const [icons, setIcons] = useState([
-    { id: 1, src: "../src/assets/idea.png", alt: "Idea", pos: "0.12" },
+    { id: 1, src: "../src/assets/idea.png", alt: "Idea", pos: "0.11" },
     { id: 2, src: "../src/assets/globe.png", alt: "Globe", pos: "0.255" },
     { id: 3, src: "../src/assets/nodes.png", alt: "Nodes", pos: "0.39" },
-    { id: 4, src: "../src/assets/s_symbol.png", alt: "S Symbol", pos: "0.51" }, // active one
+    { id: 4, src: "../src/assets/s_symbol.png", alt: "S Symbol", pos: "0.52 " }, // active one
     { id: 5, src: "../src/assets/service.png", alt: "Service", pos: "0.66" },
     { id: 6, src: "../src/assets/sharing.png", alt: "Sharing", pos: "0.795" },
     { id: 7, src: "../src/assets/user.png", alt: "User", pos: '0.93' }
@@ -22,11 +22,11 @@ const Hero = () => {
 
 
   const step = 0.13; // Each icon's step distance
-  const startOffset = 0.11;
-  const midOffset = 0.51;
+  const startOffset = 0.05;
+  const midOffset = 0.52;
   const endOffset = 0.93;
 
-    const finalPositions = [
+  const finalPositions = [
     { top: "150px", left: "-15px" },
     { top: "58px", left: "45px" },
     { top: "-13px", left: "135px" },
@@ -75,7 +75,7 @@ const Hero = () => {
         )
       );
       setActiveId(prev => icons[clickedIndex].id);
-      snapToFinalPositions();
+     
     }
     });
 
@@ -158,9 +158,6 @@ const Hero = () => {
           <path id="motionPath"
           d="M0,280 A299,307 0 0,1 590,250"
           fill="none"
-          stroke="red"
-          strokeWidth="2"
-          strokeDasharray="5,5"
           style={{ transform: 'translateY(-5px)' }}
           
            />

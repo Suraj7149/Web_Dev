@@ -212,8 +212,8 @@ body::-webkit-scrollbar {
 }
 
 .icon-holder.active {
-  height: 90px;
-  width: 90px;
+  height: 85px;
+  width: 85px;
   transform: translateY(-10px);
  
 }
