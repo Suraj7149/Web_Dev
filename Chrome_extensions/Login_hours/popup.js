@@ -3,64 +3,76 @@ document.addEventListener("DOMContentLoaded", async () => {
   const statusLabel = document.getElementById("agent-status");
   const statusDiv = document.querySelector(".current_status");
   const dateLabel = document.getElementById("current-date");
-  const loginLabel = document.getElementById("first-login");   // add span in popup.html
-  const productiveLabel = document.getElementById("productive-hours"); // add span in popup.html
+  const loginLabel = document.getElementById("first-login");
+  const productiveLabel = document.getElementById("productive-hours");
 
-  let productiveInterval = null;
-
-  // ------------------
   // 📅 Current date
-  // ------------------
   const today = new Date();
-  const formattedDate = today.toLocaleString("en-US", { 
-    weekday: "long",
-    year: "numeric",
-    month: "long",
-    day: "numeric"
+  dateLabel.textContent = today.toLocaleString("en-US", {
+    weekday: "long", year: "numeric", month: "long", day: "numeric"
   });
-  dateLabel.textContent = formattedDate;
 
-  const todayKey = today.toDateString(); // "Sat Aug 23 2025"
+  // Load stored values
+  const data = await chrome.storage.local.get([
+    "agentName", "agentStatus", "firstLoginTime", "productiveSeconds", "lastStart"
+  ]);
+  if (data.agentName) label.textContent = `Agent: ${data.agentName}`;
+  if (data.agentStatus) updateStatusUI(data.agentStatus);
+  if (data.firstLoginTime) loginLabel.textContent = data.firstLoginTime;
+  updateProductiveLabel(data.productiveSeconds || 0);
 
-  // ------------------
-  // 🔄 Reset storage if date changed
-  // ------------------
-  const storedDate = localStorage.getItem("currentDate");
-  if (storedDate !== todayKey) {
-    localStorage.setItem("currentDate", todayKey);
-    localStorage.removeItem("firstLoginTime");
-    localStorage.setItem("productiveSeconds", "0");
+  // Smooth ticking while popup is open
+  let tickInterval = null;
+  function startSmoothTick() {
+    if (tickInterval) return;
+    tickInterval = setInterval(async () => {
+      const { productiveSeconds, lastStart, agentStatus } = await chrome.storage.local.get([
+        "productiveSeconds", "lastStart", "agentStatus"
+      ]);
+      let total = productiveSeconds || 0;
+      if (agentStatus?.toLowerCase().includes("available") && lastStart) {
+        total += Math.floor((Date.now() - lastStart) / 1000);
+      }
+      updateProductiveLabel(total);
+    }, 1000);
   }
+  function stopSmoothTick() {
+    if (tickInterval) clearInterval(tickInterval);
+    tickInterval = null;
+  }
+  if (data.agentStatus?.toLowerCase().includes("available")) startSmoothTick();
 
-  // ------------------
-  // Restore from localStorage
-  // ------------------
-  const storedName = localStorage.getItem("agentName");
-  if (storedName) label.textContent = `Agent: ${storedName}`;
+  // Listen for changes from background
+  chrome.storage.onChanged.addListener((changes) => {
+    if (changes.agentName) label.textContent = `Agent: ${changes.agentName.newValue}`;
+    if (changes.agentStatus) {
+      updateStatusUI(changes.agentStatus.newValue);
+      if (changes.agentStatus.newValue.toLowerCase().includes("available")) startSmoothTick();
+      else stopSmoothTick();
+    }
+    if (changes.firstLoginTime) loginLabel.textContent = changes.firstLoginTime.newValue;
+    if (changes.productiveSeconds) updateProductiveLabel(changes.productiveSeconds.newValue);
+  });
 
-  const storedStatus = localStorage.getItem("agentStatus");
-  if (storedStatus) {
-    statusLabel.textContent = storedStatus;
-    if (storedStatus.toLowerCase().includes("available")) {
+  // --- UI helpers ---
+  function updateStatusUI(status) {
+    statusLabel.textContent = status;
+    if (status?.toLowerCase().includes("available")) {
       statusDiv?.classList.add("active");
-      startTimer();
     } else {
       statusDiv?.classList.remove("active");
-      stopTimer();
     }
   }
+  function updateProductiveLabel(secs) {
+    const h = String(Math.floor(secs / 3600)).padStart(2, "0");
+    const m = String(Math.floor((secs % 3600) / 60)).padStart(2, "0");
+    const s = String(secs % 60).padStart(2, "0");
+    productiveLabel.textContent = `${h}:${m}:${s}`;
+  }
 
-  const storedLogin = localStorage.getItem("firstLoginTime");
-  if (storedLogin) loginLabel.textContent = storedLogin;
-
-  const storedSeconds = parseInt(localStorage.getItem("productiveSeconds") || "0");
-  updateProductiveLabel(storedSeconds);
-
-  // ------------------
-  // 🚀 Fetch live data
-  // ------------------
+  // 🚀 Fetch agent info from CRM tab (just like your working version)
   const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
-  if (tab.url.includes("cashify.kapturecrm.com/nui/tickets/assigned_to_me/")) {
+  if (tab?.url?.includes("cashify.kapturecrm.com/nui/tickets/assigned_to_me/")) {
     chrome.scripting.executeScript(
       {
         target: { tabId: tab.id },
@@ -75,68 +87,39 @@ document.addEventListener("DOMContentLoaded", async () => {
           return { agentName, agentStatus };
         },
       },
-      (results) => {
-        if (results && results[0] && results[0].result) {
-          const { agentName, agentStatus } = results[0].result;
+      async(results) => {
+  if (chrome.runtime.lastError) {
+    console.warn("[popup] executeScript error:", chrome.runtime.lastError.message);
+    return;
+  }
+  if (results && results[0] && results[0].result) {
+    const { agentName, agentStatus } = results[0].result;
 
-          if (agentName) {
-            label.textContent = `Agent: ${agentName}`;
-            localStorage.setItem("agentName", agentName);
-          }
+    if (agentName) {
+      label.textContent = `Agent: ${agentName}`;
+      chrome.storage.local.set({ agentName }).then(() => {
+        console.log("[popup] stored agentName");
+      });
+    }
 
-          if (agentStatus) {
-            statusLabel.textContent = agentStatus;
-            localStorage.setItem("agentStatus", agentStatus);
+    if (agentStatus) {
+      statusLabel.textContent = agentStatus;
+      updateStatusUI(agentStatus);
 
-            if (agentStatus.toLowerCase().includes("available")) {
-              statusDiv?.classList.add("active");
-
-              // ✅ First login time (12hr format)
-              if (!localStorage.getItem("firstLoginTime")) {
-                const loginTime = new Date().toLocaleTimeString("en-US", {
-                  hour: "2-digit",
-                  minute: "2-digit",
-                  hour12: true
-                });
-                localStorage.setItem("firstLoginTime", loginTime);
-                loginLabel.textContent = loginTime;
-              }
-
-              startTimer();
-            } else {
-              statusDiv?.classList.remove("active");
-              stopTimer();
-            }
-          }
+      // send message and log any error/response
+      chrome.runtime.sendMessage({ type: "status-update", status: agentStatus }, (resp) => {
+        if (chrome.runtime.lastError) {
+          console.warn("[popup] sendMessage failed:", chrome.runtime.lastError.message);
+        } else {
+          console.log("[popup] sendMessage response:", resp);
         }
-      }
-    );
-  }
-
-  // ------------------
-  // ⏱ Productive Timer
-  // ------------------
-  function startTimer() {
-    if (productiveInterval) return; // already running
-    productiveInterval = setInterval(() => {
-      let secs = parseInt(localStorage.getItem("productiveSeconds") || "0");
-      secs++;
-      localStorage.setItem("productiveSeconds", secs);
-      updateProductiveLabel(secs);
-    }, 1000);
-  }
-
-  function stopTimer() {
-    if (productiveInterval) {
-      clearInterval(productiveInterval);
-      productiveInterval = null;
+      });
     }
   }
+        
+    }
 
-  function updateProductiveLabel(secs) {
-    const h = String(Math.floor(secs / 3600)).padStart(2, "0");
-    const m = String(Math.floor((secs % 3600) / 60)).padStart(2, "0");
-    const s = String(secs % 60).padStart(2, "0");
-    productiveLabel.textContent = `${h}:${m}:${s}`;
+    );
   }
 });
+
