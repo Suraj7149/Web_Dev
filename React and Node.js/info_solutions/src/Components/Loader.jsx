@@ -4,7 +4,9 @@ import "../index.css" // Assuming you have a global CSS file for styles
 const Loader = () => {
   return (
     <div className='Loader'>
-      This is loader component.
+      Welcome To  
+      <br /> INFO
+      <br /> SOLUTIONS
     </div>
   )
 }

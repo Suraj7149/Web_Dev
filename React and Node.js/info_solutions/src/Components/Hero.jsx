@@ -124,16 +124,16 @@ const Hero = () => {
 
   return (
     <div className="hero-container">
-        <div className="heading">
+      <div className="heroheading">
             <h1><span>DIGITAL</span> SOLUTIONS THAT <br />SCALE</h1>
             <h3>
                 Empowering utilities, municipalities, and enterprises to modernize,
                 <br />integrate, and grow through agile, people-focused digital
                 <br />transformation.
             </h3>
-        </div>
+      </div>
         
-        <div className='circular-menu'>
+      <div className='circular-menu'>
           <div  className='circular-menu-line'>
 
             <div className="icon-wrapper">
@@ -153,7 +153,6 @@ const Hero = () => {
             ))}
           </div>
 
-
           <svg width="590" height="225" viewBox="0 0 590 225" > 
           <path id="motionPath"
           d="M0,280 A299,307 0 0,1 590,250"
@@ -163,69 +162,254 @@ const Hero = () => {
            />
           </svg>
 
-          <div className='description-heading'>
-            <div className='idea-png-desc desc_hd active'>
-              <h1><span className='headingspan'>Solutions</span><br />ARCHITECTURE</h1>
+          
+        </div>                  
+      </div>
+
+      <div  id="idea_desc" className='description active'>
+            <div className='description_heading'>
+              <h1><span className='description_headingspan'>SOLUTIONS</span><br />ARCHITECTURE</h1>
               <h3>Design and deliver technological solutions to address specific business  
                 <br />challenges, ensuring they align with the organizations overall IT strategy.</h3>
-              <div className='cards active'>
-                <div className='card card1 active'>
+            </div>
+            <div className='cards'>
+                <div className='card'>
                   <img src="../src/assets/s_symbol.png" alt="" />
                   <label htmlFor="">What we offer</label>
                   <ul>
-                    <li><span className='card_span'>Strategic Alignment: </span>Solutions</li>
-                    <li><span className='card_span'>Integrated Approach: </span>Seamlessly </li>
-                    <li><span className='card_span'>Scalability at Core: </span>Built</li>
+                    <li><span className='card_span'>Strategic Alignment: </span>Solutions tailored to your business goals and long-term vision</li>
+                    <li><span className='card_span'>Integrated Approach: </span>Seamlessly connect systems, people, and workflows.</li>
+                    <li><span className='card_span'>Scalability at Core: </span>Built to support evolving demands and future growth.</li>
                   </ul>
                 </div>
-                
+                <div className='card'>
+                  <img src="../src/assets/s_symbol.png" alt="" />
+                  <label htmlFor="">Ideal clients</label>
+                  <ul>
+                    <li>Forward-thinking organizations looking to modernize their IT landscape, unify systems, and align technology with long-term strategic goals.</li>
+                    </ul>
+                </div>
+                <div className='card'>
+                  <img src="../src/assets/s_symbol.png" alt="" />
+                  <label htmlFor="">Benefits</label>
+                  <ul>
+                    <li>Clear, scalable frameworks that grow with your business.</li>
+                    <li>Stronger collaboration between IT and business teams. </li>
+                    <li>Reduced complexity, faster delivery, and future-ready systems.</li>
+                  </ul>
+                </div>
               </div>
+      </div> 
+
+      <div  id="idea_desc" className='description'>
+            <div className='description_heading'>
+              <h1><span className='description_headingspan'>SOLUTIONS</span><br />ARCHITECTURE</h1>
+              <h3>Design and deliver technological solutions to address specific business  
+                <br />challenges, ensuring they align with the organizations overall IT strategy.</h3>
             </div>
+            <div className='cards'>
+                <div className='card'>
+                  <img src="../src/assets/s_symbol.png" alt="" />
+                  <label htmlFor="">What we offer</label>
+                  <ul>
+                    <li><span className='card_span'>Strategic Alignment: </span>Solutions tailored to your business goals and long-term vision</li>
+                    <li><span className='card_span'>Integrated Approach: </span>Seamlessly connect systems, people, and workflows.</li>
+                    <li><span className='card_span'>Scalability at Core: </span>Built to support evolving demands and future growth.</li>
+                  </ul>
+                </div>
+                <div className='card'>
+                  <img src="../src/assets/s_symbol.png" alt="" />
+                  <label htmlFor="">Ideal clients</label>
+                  <ul>
+                    <li>Forward-thinking organizations looking to modernize their IT landscape, unify systems, and align technology with long-term strategic goals.</li>
+                    </ul>
+                </div>
+                <div className='card'>
+                  <img src="../src/assets/s_symbol.png" alt="" />
+                  <label htmlFor="">Benefits</label>
+                  <ul>
+                    <li>Clear, scalable frameworks that grow with your business.</li>
+                    <li>Stronger collaboration between IT and business teams. </li>
+                    <li>Reduced complexity, faster delivery, and future-ready systems.</li>
+                  </ul>
+                </div>
+              </div>
+      </div>
 
-            <div className='globe-png-desc'>
-              <h1><span>Growth</span><br />READY</h1>
-              <h3>Prepare for scale from day one.</h3>
+      <div  id="idea_desc" className='description'>
+            <div className='description_heading'>
+              <h1><span className='description_headingspan'>SOLUTIONS</span><br />ARCHITECTURE</h1>
+              <h3>Design and deliver technological solutions to address specific business  
+                <br />challenges, ensuring they align with the organizations overall IT strategy.</h3>
             </div>
+            <div className='cards'>
+                <div className='card'>
+                  <img src="../src/assets/s_symbol.png" alt="" />
+                  <label htmlFor="">What we offer</label>
+                  <ul>
+                    <li><span className='card_span'>Strategic Alignment: </span>Solutions tailored to your business goals and long-term vision</li>
+                    <li><span className='card_span'>Integrated Approach: </span>Seamlessly connect systems, people, and workflows.</li>
+                    <li><span className='card_span'>Scalability at Core: </span>Built to support evolving demands and future growth.</li>
+                  </ul>
+                </div>
+                <div className='card'>
+                  <img src="../src/assets/s_symbol.png" alt="" />
+                  <label htmlFor="">Ideal clients</label>
+                  <ul>
+                    <li>Forward-thinking organizations looking to modernize their IT landscape, unify systems, and align technology with long-term strategic goals.</li>
+                    </ul>
+                </div>
+                <div className='card'>
+                  <img src="../src/assets/s_symbol.png" alt="" />
+                  <label htmlFor="">Benefits</label>
+                  <ul>
+                    <li>Clear, scalable frameworks that grow with your business.</li>
+                    <li>Stronger collaboration between IT and business teams. </li>
+                    <li>Reduced complexity, faster delivery, and future-ready systems.</li>
+                  </ul>
+                </div>
+              </div>
+      </div>
 
-            <div className='nodes-png-desc'>
-              <h1><span>Digital</span><br />Self-Service</h1>
-              <h3>Delivering unified, personalized digital experiences across web and mobile platforms.</h3>
+      <div  id="idea_desc" className='description'>
+            <div className='description_heading'>
+              <h1><span className='description_headingspan'>SOLUTIONS</span><br />ARCHITECTURE</h1>
+              <h3>Design and deliver technological solutions to address specific business  
+                <br />challenges, ensuring they align with the organizations overall IT strategy.</h3>
             </div>
+            <div className='cards'>
+                <div className='card'>
+                  <img src="../src/assets/s_symbol.png" alt="" />
+                  <label htmlFor="">What we offer</label>
+                  <ul>
+                    <li><span className='card_span'>Strategic Alignment: </span>Solutions tailored to your business goals and long-term vision</li>
+                    <li><span className='card_span'>Integrated Approach: </span>Seamlessly connect systems, people, and workflows.</li>
+                    <li><span className='card_span'>Scalability at Core: </span>Built to support evolving demands and future growth.</li>
+                  </ul>
+                </div>
+                <div className='card'>
+                  <img src="../src/assets/s_symbol.png" alt="" />
+                  <label htmlFor="">Ideal clients</label>
+                  <ul>
+                    <li>Forward-thinking organizations looking to modernize their IT landscape, unify systems, and align technology with long-term strategic goals.</li>
+                    </ul>
+                </div>
+                <div className='card'>
+                  <img src="../src/assets/s_symbol.png" alt="" />
+                  <label htmlFor="">Benefits</label>
+                  <ul>
+                    <li>Clear, scalable frameworks that grow with your business.</li>
+                    <li>Stronger collaboration between IT and business teams. </li>
+                    <li>Reduced complexity, faster delivery, and future-ready systems.</li>
+                  </ul>
+                </div>
+              </div>
+      </div>
 
-            <div className='s_symbol-png-desc'>
-              <h1>Integration</h1>
-              <h3>Streamline operations and scale with seamless system integration and enterprise <br />connectivity.</h3>
+      <div  id="idea_desc" className='description'>
+            <div className='description_heading'>
+              <h1><span className='description_headingspan'>SOLUTIONS</span><br />ARCHITECTURE</h1>
+              <h3>Design and deliver technological solutions to address specific business  
+                <br />challenges, ensuring they align with the organizations overall IT strategy.</h3>
             </div>
+            <div className='cards'>
+                <div className='card'>
+                  <img src="../src/assets/s_symbol.png" alt="" />
+                  <label htmlFor="">What we offer</label>
+                  <ul>
+                    <li><span className='card_span'>Strategic Alignment: </span>Solutions tailored to your business goals and long-term vision</li>
+                    <li><span className='card_span'>Integrated Approach: </span>Seamlessly connect systems, people, and workflows.</li>
+                    <li><span className='card_span'>Scalability at Core: </span>Built to support evolving demands and future growth.</li>
+                  </ul>
+                </div>
+                <div className='card'>
+                  <img src="../src/assets/s_symbol.png" alt="" />
+                  <label htmlFor="">Ideal clients</label>
+                  <ul>
+                    <li>Forward-thinking organizations looking to modernize their IT landscape, unify systems, and align technology with long-term strategic goals.</li>
+                    </ul>
+                </div>
+                <div className='card'>
+                  <img src="../src/assets/s_symbol.png" alt="" />
+                  <label htmlFor="">Benefits</label>
+                  <ul>
+                    <li>Clear, scalable frameworks that grow with your business.</li>
+                    <li>Stronger collaboration between IT and business teams. </li>
+                    <li>Reduced complexity, faster delivery, and future-ready systems.</li>
+                  </ul>
+                </div>
+              </div>
+      </div>
 
-            <div className='serivce-png-desc'>
-              <h1><span>Maintenance</span><br />Support</h1>
-              <h3>Dedicated maintenance support designed to your evolving business needs.</h3>
+      <div  id="idea_desc" className='description'>
+            <div className='description_heading'>
+              <h1><span className='description_headingspan'>SOLUTIONS</span><br />ARCHITECTURE</h1>
+              <h3>Design and deliver technological solutions to address specific business  
+                <br />challenges, ensuring they align with the organizations overall IT strategy.</h3>
             </div>
+            <div className='cards'>
+                <div className='card'>
+                  <img src="../src/assets/s_symbol.png" alt="" />
+                  <label htmlFor="">What we offer</label>
+                  <ul>
+                    <li><span className='card_span'>Strategic Alignment: </span>Solutions tailored to your business goals and long-term vision</li>
+                    <li><span className='card_span'>Integrated Approach: </span>Seamlessly connect systems, people, and workflows.</li>
+                    <li><span className='card_span'>Scalability at Core: </span>Built to support evolving demands and future growth.</li>
+                  </ul>
+                </div>
+                <div className='card'>
+                  <img src="../src/assets/s_symbol.png" alt="" />
+                  <label htmlFor="">Ideal clients</label>
+                  <ul>
+                    <li>Forward-thinking organizations looking to modernize their IT landscape, unify systems, and align technology with long-term strategic goals.</li>
+                    </ul>
+                </div>
+                <div className='card'>
+                  <img src="../src/assets/s_symbol.png" alt="" />
+                  <label htmlFor="">Benefits</label>
+                  <ul>
+                    <li>Clear, scalable frameworks that grow with your business.</li>
+                    <li>Stronger collaboration between IT and business teams. </li>
+                    <li>Reduced complexity, faster delivery, and future-ready systems.</li>
+                  </ul>
+                </div>
+              </div>
+      </div>
 
-            <div className='sharing-png-desc'>
-              <h1><span>DevOps</span><br />Consulting</h1>
-              <h3>Strategic DevOps and managed services to ensure speed, stability, and security across 
-                <br />all development stages</h3>
+      <div  id="idea_desc" className='description'>
+            <div className='description_heading'>
+              <h1><span className='description_headingspan'>SOLUTIONS</span><br />ARCHITECTURE</h1>
+              <h3>Design and deliver technological solutions to address specific business  
+                <br />challenges, ensuring they align with the organizations overall IT strategy.</h3>
             </div>
-
-            <div className='user-png-desc'>
-              <h1><span>specialized</span><br />Talent Acquisition</h1>
-              <h3>Delivering vetted, domain-aligned talent that fits your culture and meets technical 
-                <br />needs</h3>
-            </div>
-
-            
-            
-
-          </div>
-
-          </div>        
-
-
-          
-        </div>
-        
-      
+            <div className='cards'>
+                <div className='card'>
+                  <img src="../src/assets/s_symbol.png" alt="" />
+                  <label htmlFor="">What we offer</label>
+                  <ul>
+                    <li><span className='card_span'>Strategic Alignment: </span>Solutions tailored to your business goals and long-term vision</li>
+                    <li><span className='card_span'>Integrated Approach: </span>Seamlessly connect systems, people, and workflows.</li>
+                    <li><span className='card_span'>Scalability at Core: </span>Built to support evolving demands and future growth.</li>
+                  </ul>
+                </div>
+                <div className='card'>
+                  <img src="../src/assets/s_symbol.png" alt="" />
+                  <label htmlFor="">Ideal clients</label>
+                  <ul>
+                    <li>Forward-thinking organizations looking to modernize their IT landscape, unify systems, and align technology with long-term strategic goals.</li>
+                    </ul>
+                </div>
+                <div className='card'>
+                  <img src="../src/assets/s_symbol.png" alt="" />
+                  <label htmlFor="">Benefits</label>
+                  <ul>
+                    <li>Clear, scalable frameworks that grow with your business.</li>
+                    <li>Stronger collaboration between IT and business teams. </li>
+                    <li>Reduced complexity, faster delivery, and future-ready systems.</li>
+                  </ul>
+                </div>
+              </div>
+      </div>
     </div>
   )
 }
