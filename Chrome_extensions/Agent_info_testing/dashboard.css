@@ -1,0 +1,98 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-image: url('windows_11_blue.jpg');
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-size: cover;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+}
+
+
+.display{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content_box{
+  width: 95%;
+  height: 95%;
+  background-color: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(15px);
+  border-radius: 22px;
+  /* border-left: 1px solid rgba(255, 255, 255, 0.4); */
+  /* box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.3); */
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+}
+
+.content{
+  margin: 10px 0 0 10px;
+  height: 97.5%;
+  width: 98.5%;
+  border-radius: 16px;  
+  display: flex;
+  justify-content: center;
+  background-color: transparent;
+  align-items: top;
+  overflow: hidden;
+
+}
+
+table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: center;
+      background: transparent;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      border-radius: 12px;
+      overflow: visible;
+    }
+    th, td {
+      padding: 12px;
+      letter-spacing: 1px;
+      
+    }
+    td{
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(15px);
+      font-size: 15px;
+      letter-spacing: 1px;
+    }
+    th {
+      background: rgba(0,0,0,0.5);
+      backdrop-filter: blur(40px);
+      color: white;
+      font-size: 25px;
+      letter-spacing: 2px;
+      height: 50px;
+    }
+    .subheader {
+      background: #ecf0f150;
+      backdrop-filter: blur(30px);
+      font-weight: bold;
+      font-size: 20px;
+      letter-spacing: 1.5px;
+    }
+
+.outer_left{
+  border-radius: 16px 0 0 0;
+}
+
+.outer_right{
+  border-radius: 0 16px 0 0;
+}
+
+.busy { color: orange; font-weight: bold; }
+.Available { color: green; font-weight: bold; }
+.Not_Available { color: red; font-weight: bold; }

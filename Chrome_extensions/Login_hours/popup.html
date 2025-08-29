@@ -28,31 +28,33 @@
           <div class="first_time_info">
             <div class="status_display">
               <div class="current_status">
-                <label for="" id="agent-status"></label>
+                
+                <label for=""> Current Status: <br><span id="agent-status"></span></label>
               </div>
             </div>
 
             <div class="time_display">
-                <label htmlFor="" class='normal'>First Login Today: <span id="first-login">00:00:00</span></label>
-                <label htmlFor="" class='normal'>Total Productive  Hours: <span id="productive-hours">00:00:00</span></label>
+                <label htmlFor="" class='normal first_login' >First Login Today: <span id="first-login">00:00:00</span></label>
+                <label htmlFor="" class='normal'><a href="">(Target >= 8 Hours)</a>Total Productive Hours: <span id="productive-hours">00:00:00</span></label>
             </div>
           </div>
           <div class="overall_timeinfo">
             <div class="display1">
-              <label htmlFor="" class='normal'>Bio Break Taken: <br /> <span>00:00:00</span></label>
-              <label htmlFor="" class='normal'>Tea Break Taken: <br /> <span>00:00:00</span></label>
-              <label htmlFor="" class='normal'>Lunch Taken: <br /> <span>00:00:00</span></label>
+              <label htmlFor="" class='normal'>Bio Break: <br /> <span id="bio-break-time">00:00:00</span></label>
+              <label htmlFor="" class='normal'>Tea Break: <br /> <span id="tea-break-time">00:00:00</span></label>
+              <label htmlFor="" class='normal'>Lunch: <br /> <span id="lunch-time">00:00:00</span></label>
+              <label htmlFor="" class='normal'>Total Break: <br /> <span id="total-break-time">00:00:00</span></label>
             </div>
             <div class="display2">
-              <label htmlFor="" class='normal'>Offline Time Taken: <br /> <span>00:00:00</span></label>
-              <label htmlFor="" class='normal'>Offline still on task <br /> Time Taken: <br />( Allows Time: 15 min ) <br /> <span>00:00:00</span></label>  
+              <label htmlFor="" class='normal'>Offline: <br /> <span id="offline-time">00:00:00</span></label>
+              <label htmlFor="" class='normal'>Offline - still on task: <br /><a href="">( Allowed Time: 15 min )</a> <span id="offline-task-time">00:00:00</span></label>  
             </div>
             
             
 
           </div>
           <div class="logout_time">
-             <label htmlFor="" class='red' >Expected Logout Time: <br /> <span>00:00:00</span></label>
+             <label htmlFor="" class='red' >Expected Logout Time: <br /> <span id="expected-logout">00:00:00</span></label>
           </div>
 
           

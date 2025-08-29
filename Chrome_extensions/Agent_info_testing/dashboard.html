@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Agent Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+  <div class="display">
+    <div class="content_box">
+      <div class="content">
+        <table>
+          <thead>
+      <tr>
+        <th>Chat</th>
+        <th colspan="2">Whatsapp</th>
+        <th>Inbound</th>
+        <th>Email</th>
+        <th>Outbound</th>
+      </tr>
+      <tr>
+        <td>Total Agents: <span id="chatCount">0</span></td>
+        <td colspan="2">Total Agents: <span id="waCount">0</span></td>
+        <td>Total Agents: <span id="inboundCount">0</span></td>
+        <td>Total Agents: <span id="emailCount">0</span></td>
+        <td>Total Agents: <span id="outCount">0</span></td>
+      </tr>
+      <tr class="subheader">
+        <td>Chat Queue BB Sell Phone</td>
+        <td>WhatsApp Queue</td>
+        <td>WhatsApp Queue (BuyBack)</td>
+        <td>Inbound Call</td>
+        <td>Support</td>
+        <td>CallBack BuyBack</td>
+      </tr>
+    </thead>
+        <tbody id="agentBody"></tbody>
+      </table>
+      </div>
+    </div>
+  </div>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>
