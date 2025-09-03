@@ -6,17 +6,16 @@ html, body {
 }
 
 body {
-  background-image: url('windows_11_blue.jpg');
+  background-color: rgb(0, 0, 0, 0.1);
+  /* background: url("watch_tower_bg.png"); */
+  /* backdrop-filter: blur(60px); */
   background-repeat: no-repeat;
   background-position: top left;
   background-size: cover;
   background-attachment: fixed;
-  margin: 0;
-  padding: 0;
 }
 
-
-.display{
+.display {
   width: 100%;
   height: 100%;
   display: flex;
@@ -24,75 +23,124 @@ body {
   align-items: center;
 }
 
-.content_box{
+.content_box {
   width: 95%;
   height: 95%;
   background-color: rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(15px);
   border-radius: 22px;
-  /* border-left: 1px solid rgba(255, 255, 255, 0.4); */
-  /* box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.3); */
   border: 1px solid rgba(255, 255, 255, 0.4);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
-}
-
-.content{
-  margin: 10px 0 0 10px;
-  height: 97.5%;
-  width: 98.5%;
-  border-radius: 16px;  
   display: flex;
-  justify-content: center;
-  background-color: transparent;
-  align-items: top;
+  flex-direction: column;
   overflow: hidden;
-
 }
 
+.content {
+  flex: 1;
+  margin: 10px;
+  border-radius: 16px;
+  background-color: transparent;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  will-change: transform;  /* hint browser to optimize scrolling */
+  -webkit-overflow-scrolling: touch; /* smoother scroll on touchpads/mobiles */
+}
+
+
+/* ===== Table ===== */
 table {
-      width: 100%;
-      border-collapse: collapse;
-      text-align: center;
-      background: transparent;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      border-radius: 12px;
-      overflow: visible;
-    }
-    th, td {
-      padding: 12px;
-      letter-spacing: 1px;
-      
-    }
-    td{
-      border: 1px solid rgba(255, 255, 255, 0.5);
-      backdrop-filter: blur(15px);
-      font-size: 15px;
-      letter-spacing: 1px;
-    }
-    th {
-      background: rgba(0,0,0,0.5);
-      backdrop-filter: blur(40px);
-      color: white;
-      font-size: 25px;
-      letter-spacing: 2px;
-      height: 50px;
-    }
-    .subheader {
-      background: #ecf0f150;
-      backdrop-filter: blur(30px);
-      font-weight: bold;
-      font-size: 20px;
-      letter-spacing: 1.5px;
-    }
-
-.outer_left{
-  border-radius: 16px 0 0 0;
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  background: transparent;
+  border-radius: 12px;
 }
 
-.outer_right{
-  border-radius: 0 16px 0 0;
+th, td {
+  padding: 10px;
+  letter-spacing: 1px;
 }
 
-.busy { color: orange; font-weight: bold; }
-.Available { color: green; font-weight: bold; }
-.Not_Available { color: red; font-weight: bold; }
+td {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(15px);
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+/* Sticky Header */
+thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(40px);
+  color: white;
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+
+/* Subheader row (Total counts + queue labels) */
+.subheader {
+  background: #ecf0f150;
+  backdrop-filter: blur(30px);
+  font-weight: bold;
+  font-size: 15px;
+  letter-spacing: 1.5px;
+  position: sticky;
+  top: 42px; /* sticks just below main header */
+  z-index: 1;
+}
+
+/* Serial Number column */
+.serial-col {
+  font-weight: bold;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(15px);
+  color: #333;
+  width: 40px;
+}
+
+/* ===== Status Colors ===== */
+.busy { 
+  color: green;
+  background-color: rgba(0, 128, 0, 0.2);
+  font-weight: 500;
+}
+.Available { 
+  color: black;
+  background-color: rgba(255, 165, 0, 0.2);
+  font-weight: 500;
+}
+.Not_Available { 
+  color: red;
+  background-color: rgba(255, 0, 0, 0.2);
+  font-weight: 500;
+}
+
+.count{
+  font-size: 21px;
+  font-weight: 900;
+  height: 20px;
+  color: rgb(5, 114, 222);
+  background-color: rgba(5, 114, 222, 0.15);
+  padding: 0 0 0 0;
+}
+
+
+.content::-webkit-scrollbar {
+  display: none;
+}
+
+/* Firefox */
+.content {
+  scroll-behavior: smooth;
+  scrollbar-width: none;   /* hides scrollbar */
+}
+
+/* IE and old Edge */
+.content {
+  -ms-overflow-style: none; 
+}
